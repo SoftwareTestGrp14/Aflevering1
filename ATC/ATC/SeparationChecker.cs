@@ -16,7 +16,6 @@ namespace ATC
                 {
                     if (toCheck[i]._alt >= toCheck[j]._alt - 300 && toCheck[i]._alt <= toCheck[j]._alt + 300)
                     {
-
                         if ()
                     }
 

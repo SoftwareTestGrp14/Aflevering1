@@ -17,12 +17,12 @@ namespace ATC
             _timestamp = ts;
         }
 
-        private string _tag { get; }
-        private int _xCord { get; }
-        private int _yCord { get; }
-        private int _alt { get; }
-        private int _velocity { get; }
-        private int _course { get; }
-        private DateTime _timestamp { get; }
+        public string _tag { get; }
+        public int _xCord { get; }
+        public int _yCord { get; }
+        public int _alt { get; }
+        public int _velocity { get; }
+        public int _course { get; }
+        public DateTime _timestamp { get; }
     }
 }

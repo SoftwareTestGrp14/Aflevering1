@@ -13,22 +13,23 @@ namespace ATC
         private SeparationChecker sepCheck;
         string[] tempData=null;
 
+
         public void Update(string data)
         {
 
             string[] newData = ConvertTransponderData(data);
+            if (tempData != null)
+            {
+                int vel = CalcVelocity(int.Parse(tempData[1]), int.Parse(newData[1]), int.Parse(tempData[2]), int.Parse(newData[2]), DateTime.Parse(tempData[4]), DateTime.Parse(newData[4]));
+                int course = CalcCourse(int.Parse(tempData[1]), int.Parse(newData[1]), int.Parse(tempData[2]), int.Parse(newData[2]), DateTime.Parse(tempData[4]), DateTime.Parse(newData[4]));
 
+                ITrack newTrack = new Track(newData[0], int.Parse(newData[1]), int.Parse(newData[2]), int.Parse(newData[3]), vel , course, DateTime.Parse(newData[4]));
 
-
+                tracks.Add(newTrack);
+            }
 
             tempData = newData;
             
-
-            ITrack newTrack = new Track(newData[0], int.Parse(newData[1]), int.Parse(newData[2]), int.Parse(newData[3]), , , new DateTime(String.));
-
-            tracks.Add(newTrack);
-
-
         }
 
         public string[] ConvertTransponderData(string data)
