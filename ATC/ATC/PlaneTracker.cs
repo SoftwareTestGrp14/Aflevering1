@@ -11,24 +11,58 @@ namespace ATC
         
         private List<ITrack> tracks;
         private SeparationChecker sepCheck;
-        string[] tempData=null;
+        private IAirSpaceTracker airSpaceTracker;
+        private IAirSpace airSpace;
+        private List<string[]> tempDataList;
+
+        public PlaneTracker()
+        {
+            airSpaceTracker= new AirSpaceTracker();
+            airSpace = new AirSpace();
+        }
+
 
 
         public void Update(string data)
         {
-
+            double vel=0;
+            double course=0;
             string[] newData = ConvertTransponderData(data);
-            if (tempData != null)
+
+            bool dataExists = false;
+
+            int i = 0;
+            foreach (var AircraftName in tempDataList)
             {
-                int vel = CalcVelocity(int.Parse(tempData[1]), int.Parse(newData[1]), int.Parse(tempData[2]), int.Parse(newData[2]), DateTime.Parse(tempData[4]), DateTime.Parse(newData[4]));
-                int course = CalcCourse(int.Parse(tempData[1]), int.Parse(newData[1]), int.Parse(tempData[2]), int.Parse(newData[2]), DateTime.Parse(tempData[4]), DateTime.Parse(newData[4]));
+                if (AircraftName[0] == newData[0])
+                {
+
+                    vel = CalcVelocity(int.Parse(tempDataList[i][1]), int.Parse(newData[1]), int.Parse(tempDataList[i][2]), int.Parse(newData[2]), DateTime.Parse(tempDataList[i][4]), DateTime.Parse(newData[4]));
+                    course = CalcCourse(int.Parse(tempDataList[i][1]), int.Parse(newData[1]), int.Parse(tempDataList[i][2]), int.Parse(newData[2]), DateTime.Parse(tempDataList[i][4]), DateTime.Parse(newData[4]));
+                    tempDataList[i] = newData;
+                    dataExists = true;
+                }
+
+                i++;
+            }
+
+            if (!dataExists)
+            {
+                tempDataList.Add(newData);
+            }
 
                 ITrack newTrack = new Track(newData[0], int.Parse(newData[1]), int.Parse(newData[2]), int.Parse(newData[3]), vel , course, DateTime.Parse(newData[4]));
 
-                tracks.Add(newTrack);
-            }
 
-            tempData = newData;
+                if (airSpaceTracker.IsInAirSpace(airSpace, newTrack) && !tracks.Contains(newTrack))
+                {
+                    tracks.Add(newTrack);
+                }
+                else if (tracks.Contains(newTrack))
+                {
+                    tracks.Remove(newTrack);
+
+                }
             
         }
 

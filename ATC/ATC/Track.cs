@@ -6,7 +6,7 @@ namespace ATC
 {
     class Track: ITrack
     {
-        public Track(string tag, int xC, int yC, int alt, int vel, int course, DateTime ts)
+        public Track(string tag, int xC, int yC, int alt, double vel, double course, DateTime ts)
         {
             _tag = tag;
             _xCord = xC;
@@ -21,8 +21,8 @@ namespace ATC
         public int _xCord { get; }
         public int _yCord { get; }
         public int _alt { get; }
-        public int _velocity { get; }
-        public int _course { get; }
+        public double _velocity { get; }
+        public double _course { get; }
         public DateTime _timestamp { get; }
     }
 }
