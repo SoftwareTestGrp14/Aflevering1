@@ -11,12 +11,20 @@ namespace ATC
         
         private List<ITrack> tracks;
         private SeparationChecker sepCheck;
-        
+        string[] tempData=null;
+
         public void Update(string data)
         {
-            string[] separatedData = ConvertTransponderData(data);
+
+            string[] newData = ConvertTransponderData(data);
+
+
+
+
+            tempData = newData;
             
-            ITrack newTrack = new Track(separatedData[0], separatedData[1], separatedData[2], separatedData[3], separatedData[4], separatedData[5]);
+
+            ITrack newTrack = new Track(newData[0], int.Parse(newData[1]), int.Parse(newData[2]), int.Parse(newData[3]), , , new DateTime(String.));
 
             tracks.Add(newTrack);
 

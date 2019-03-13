@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ATC
 {
-    interface IPlaneTracker
+    public interface IPlaneTracker
     {
         
 
