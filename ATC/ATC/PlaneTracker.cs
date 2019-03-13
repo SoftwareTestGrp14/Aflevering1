@@ -10,7 +10,7 @@ namespace ATC
     {
         
         private List<ITrack> tracks;
-        private ISeparationChecker sepCheck;
+        private SeparationChecker sepCheck;
         
         public void Update(string data)
         {
