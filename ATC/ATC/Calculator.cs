@@ -16,7 +16,7 @@ namespace ATC
             return distance / timeDiff.TotalSeconds;
         }
 
-        public static int CalcCourse(int xCord1, int xCord2, int yCord1, int yCord2)
+        public static double CalcCourse(int xCord1, int xCord2, int yCord1, int yCord2)
         {
             int xDiff = xCord2 - xCord1;
             int yDiff = yCord2 - yCord1;
@@ -24,6 +24,5 @@ namespace ATC
 
             return Math.Asin(yDiff / distance);
         }
-
     }
 }
