@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ATC
 {
-    class Track : ITrack
+    class Track: ITrack
     {
         public Track(string tag, int xC, int yC, int alt, int vel, int course, DateTime ts)
         {
@@ -17,12 +17,12 @@ namespace ATC
             _timestamp = ts;
         }
 
-        string _tag { get; set; }
-        private int _xCord { get; set; }
-        private int _yCord { get; set; }
-        private int _alt { get; set; }
-        private int _velocity { get; set; }
-        private int _course { get; set; }
-        private DateTime _timestamp { get; set; }
+        private string _tag { get; }
+        private int _xCord { get; }
+        private int _yCord { get; }
+        private int _alt { get; }
+        private int _velocity { get; }
+        private int _course { get; }
+        private DateTime _timestamp { get; }
     }
 }

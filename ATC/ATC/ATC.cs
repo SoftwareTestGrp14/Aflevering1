@@ -2,7 +2,8 @@
 
 namespace ATC
 {
-    public class ATC
+    public abstract class ATC
     {
+ 
     }
 }
