@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using TransponderReceiver;
 
 namespace ATC
 {
@@ -16,7 +16,10 @@ namespace ATC
             airSpace = AirSpace;
             planeTracker = plane;
 
-            TransponderReceiver.Receiver.TransponderDataReady += Receiver_TransponderDataReady;
+
+            ITransponderReceiver receiver = TransponderReceiverFactory.CreateTransponderDataReceiver();
+
+            receiver.TransponderDataReady += Receiver_TransponderDataReady;
         }
 
         private void Receiver_TransponderDataReady(object sender, global::TransponderReceiver.RawTransponderDataEventArgs e)
