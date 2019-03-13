@@ -4,9 +4,14 @@ using System.Text;
 
 namespace ATC
 {
-    class Calculator
+    public static class Calculator
     {
-        public void CalcVelocityAndCourse(int xCord, int yCord, int alt)
+        public static void CalcVelocity(int xCord, int yCord, int alt)
+        {
+
+        }
+
+        public static void CalcCourse(int xCord, int yCord, int alt)
         {
 
         }

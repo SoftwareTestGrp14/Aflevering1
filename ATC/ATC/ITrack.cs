@@ -4,14 +4,14 @@ using System.Text;
 
 namespace ATC
 {
-    interface ITrack
+    public interface ITrack
     {
-        string _tag { get; set; }
-        int _xCord { get; set; }
-        int _yCord { get; set; }
-        int _alt { get; set; }
-        int _velocity { get; set; }
-        int _course { get; set; }
-        DateTime _timestamp { get; set; }
+        string _tag { get; }
+        int _xCord { get; }
+        int _yCord { get; }
+        int _alt { get; }
+        int _velocity { get; }
+        int _course { get; }
+        DateTime _timestamp { get; }
     }
 }
