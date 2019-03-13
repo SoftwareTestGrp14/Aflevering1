@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ATC
 {
-    interface ITrack
+    public interface ITrack
     {
         string _tag { get; set; }
         int _xCord { get; set; }
