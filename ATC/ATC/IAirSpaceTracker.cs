@@ -6,6 +6,6 @@ namespace ATC
 {
     public interface IAirSpaceTracker
     {
-        bool IsInAirSpace(IAirSpace, ITrack);
+        bool IsInAirSpace(IAirSpace airSpace, ITrack track);
     }
 }
