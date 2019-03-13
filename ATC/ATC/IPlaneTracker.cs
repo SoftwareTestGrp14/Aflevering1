@@ -4,8 +4,10 @@ using System.Text;
 
 namespace ATC
 {
-    public interface IAirSpaceTracker
+    public interface IPlaneTracker
     {
-        bool IsInAirSpace(IAirSpace airSpace, ITrack track);
+        
+
+
     }
 }

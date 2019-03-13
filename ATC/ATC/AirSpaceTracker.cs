@@ -4,21 +4,21 @@ using System.Text;
 
 namespace ATC
 {
-    class AirSpaceTracker : IAirSpaceTracker
+    public class AirSpaceTracker : IAirSpaceTracker
     {
         public bool IsInAirSpace(IAirSpace airSpace, ITrack track)
         {
-            if (!track.alt >= airSpace.MinAltitude || !track.alt <= airSpace.MaxAltitude)
+            if (track._alt < airSpace.MinAltitude || track._alt > airSpace.MaxAltitude)
             { 
                 return false;
             }
 
-            if (!track.xCord>=airSpace.XStartPoint || !track.xCord<=airSpace.GetXEndPoint())
+            if (track._xCord <= airSpace.XStartPoint || track._xCord >= airSpace.GetXEndPoint())
             {
                 return false;
             }
 
-            if (!track.yCord>=airSpace.YStartPoint || !track.yCord<=airSpace.GetYEndPoint())
+            if (track._yCord <= airSpace.YStartPoint || track._yCord >= airSpace.GetYEndPoint())
             {
                 return false;
             }

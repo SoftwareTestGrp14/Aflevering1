@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ATC
 {
-    class AirSpace : IAirSpace
+    public class AirSpace : IAirSpace
     {
         public double MinAltitude { get; set; }
         public double MaxAltitude { get; set; }
