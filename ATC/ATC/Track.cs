@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ATC
 {
-    class Track: ITrack
+    public class Track: ITrack
     {
         public Track(string tag, int xC, int yC, int alt, double vel, double course, DateTime ts)
         {
