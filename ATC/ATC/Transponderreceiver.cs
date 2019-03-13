@@ -5,10 +5,10 @@ using TransponderReceiver;
 
 namespace ATC
 {
-    public class TransponderReceiver
+    public static class TransponderReceiver
     {
         
-        public ITransponderReceiver Receiver = TransponderReceiverFactory.CreateTransponderDataReceiver();
+        public static ITransponderReceiver Receiver = TransponderReceiverFactory.CreateTransponderDataReceiver();
         
     }
 
