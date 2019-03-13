@@ -24,5 +24,12 @@ namespace ATC
         public double _velocity { get; }
         public double _course { get; }
         public DateTime _timestamp { get; }
+
+
+        public bool Equals(Track other)
+        {
+            // Would still want to check for null etc. first.
+            return this._tag == other._tag;
+        }
     }
 }

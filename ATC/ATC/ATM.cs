@@ -23,7 +23,7 @@ namespace ATC
         {
 
 
-            planeTracker.Update(e.TransponderData);
+            planeTracker.Update(e.TransponderData.ToString());
 
 
         }

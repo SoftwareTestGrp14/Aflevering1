@@ -14,6 +14,7 @@ namespace ATC
         private IAirSpaceTracker airSpaceTracker;
         private IAirSpace airSpace;
         private List<string[]> tempDataList;
+        private List<SeparationCondition> currentSeparations;
 
         public PlaneTracker()
         {
@@ -63,7 +64,27 @@ namespace ATC
                     tracks.Remove(newTrack);
 
                 }
-            
+
+                foreach (var curTrack in tracks)
+                {
+                    if (IsSeparation(curTrack, newTrack))
+                    {
+                        SeparationCondition newSeparationCondition = new SeparationCondition(curTrack, newTrack);
+                        // Check om der i forvejen er en separation og override denne med den nye
+                        
+                    
+                        currentSeparations.Add(newSeparationCondition);
+                        //Write to file
+                    }
+                    else
+                    {
+                        
+                    }
+                }
+
+
+
+
         }
 
         public string[] ConvertTransponderData(string data)
