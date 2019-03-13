@@ -8,18 +8,18 @@ namespace ATC
     {
         public double MinAltitude { get; set; }
         public double MaxAltitude { get; set; }
-        public double xSideLength { get; set; }
-        public double xStartPoint { get; set; }
-        public double ySideLength { get; set; }
-        public double yStartPoint { get; set; }
+        public double XSideLength { get; set; }
+        public double XStartPoint { get; set; }
+        public double YSideLength { get; set; }
+        public double YStartPoint { get; set; }
         public double GetXEndPoint()
         {
-            return xStartPoint + xSideLength;
+            return XStartPoint + XSideLength;
         }
 
         public double GetYEndPoint()
         {
-            return yStartPoint + ySideLength;
+            return YStartPoint + YSideLength;
         }
     }
 }

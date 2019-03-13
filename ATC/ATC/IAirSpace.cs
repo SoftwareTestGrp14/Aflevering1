@@ -4,14 +4,14 @@ using System.Text;
 
 namespace ATC
 {
-    interface IAirSpace
+    public interface IAirSpace
     {
         double MinAltitude { get; set; }
         double MaxAltitude { get; set; }
-        double xSideLength { get; set; }
-        double xStartPoint { get; set; }
-        double ySideLength { get; set; }
-        double yStartPoint { get; set; }
+        double XSideLength { get; set; }
+        double XStartPoint { get; set; }
+        double YSideLength { get; set; }
+        double YStartPoint { get; set; }
         double GetXEndPoint();
         double GetYEndPoint();
     }
