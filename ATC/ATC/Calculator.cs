@@ -24,5 +24,21 @@ namespace ATC
 
             return Math.Asin(yDiff / distance);
         }
+
+        public static bool IsSeparation(Track track1, Track track2)
+        {
+            if (track1._alt <= (track2._alt + 300) && track1._alt >= (track2._alt - 300))
+            {
+                int xDiff = track1._xCord - track2._xCord;
+                int yDiff = track1._yCord - track2._yCord;
+                double separation = Math.Sqrt(Math.Pow(yDiff, 2) + Math.Pow(xDiff, 2));
+                if (separation <= 5000)
+                    return true;
+                else
+                    return false;
+            }
+            else
+                return false;
+        }
     }
 }

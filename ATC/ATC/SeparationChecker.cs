@@ -6,7 +6,7 @@ namespace ATC
 {
     class SeparationChecker
     {
-        public List<Track[]> SeparationCondition(List<Track> toCheck)
+        public List<Track[]> (List<Track> toCheck)
         {
             List<Track[]> conflicts = new List<Track[]>();
 
