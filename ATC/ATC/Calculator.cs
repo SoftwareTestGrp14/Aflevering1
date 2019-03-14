@@ -20,7 +20,17 @@ namespace ATC
         {
             int xDiff = xCord2 - xCord1;
             int yDiff = yCord2 - yCord1;
-            double distance = Math.Sqrt(Math.Pow(yDiff, 2) + Math.Pow(xDiff, 2));
+            double angle = Math.Atan(xDiff / yDiff);
+            if (yDiff > 0) //Første og anden kvadrant (Fløjet nord på)
+            {
+                
+            }
+            else //Tredje og fjerde kvadrant (Fløjet sydpå)
+            {
+
+            }
+
+
 
             return Math.Asin(yDiff / distance);
         }
