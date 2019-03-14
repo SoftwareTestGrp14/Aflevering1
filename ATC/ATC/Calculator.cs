@@ -35,7 +35,7 @@ namespace ATC
             return Math.Asin(yDiff / distance);
         }
 
-        public static bool IsSeparation(Track track1, Track track2)
+        public static bool IsSeparation(ITrack track1, ITrack track2)
         {
             if (track1._alt <= (track2._alt + 300) && track1._alt >= (track2._alt - 300))
             {
