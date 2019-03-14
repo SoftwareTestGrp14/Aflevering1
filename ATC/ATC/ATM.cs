@@ -7,15 +7,12 @@ namespace ATC
 {
     public class ATM
     {
-        private IAirSpace airSpace;
         private IPlaneTracker planeTracker;
 
 
-        public ATM(IAirSpace AirSpace, IPlaneTracker plane)
+        public ATM(IPlaneTracker plane)
         {
-            airSpace = AirSpace;
             planeTracker = plane;
-
 
             ITransponderReceiver receiver = TransponderReceiverFactory.CreateTransponderDataReceiver();
 
@@ -25,9 +22,7 @@ namespace ATC
         private void Receiver_TransponderDataReady(object sender, global::TransponderReceiver.RawTransponderDataEventArgs e)
         {
 
-
             planeTracker.Update(e.TransponderData.ToString());
-
 
         }
     }

@@ -6,6 +6,19 @@ namespace ATC
 {
     public class AirSpace : IAirSpace
     {
+
+        public AirSpace()
+        {
+            MinAltitude = 500;
+            MaxAltitude = 20000;
+
+            XSideLength = 80000;
+            XStartPoint = 0;
+
+            YSideLength = 80000;
+            YSideLength = 0;
+        }
+
         public double MinAltitude { get; set; }
         public double MaxAltitude { get; set; }
         public double XSideLength { get; set; }

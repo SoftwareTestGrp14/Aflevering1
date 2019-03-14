@@ -10,7 +10,6 @@ namespace ATC
     {
         
         private List<ITrack> tracks;
-        private SeparationChecker sepCheck;
         private IAirSpaceTracker airSpaceTracker;
         private IAirSpace airSpace;
         private List<string[]> tempDataList;
@@ -21,7 +20,6 @@ namespace ATC
             airSpaceTracker= new AirSpaceTracker();
             airSpace = new AirSpace();
         }
-
 
 
         public void Update(string data)
@@ -39,6 +37,7 @@ namespace ATC
             foreach (var AircraftName in tempDataList)
             {
                 //checks if there is data for this aircraft already
+                
                 if (AircraftName[0] == newData[0])
                 {
                     //If there the aircraft is already registered the new velocity and course is calculated and the data is overwritten
@@ -125,14 +124,11 @@ namespace ATC
 
         public string[] ConvertTransponderData(string data)
         {
-            
 
             string[] separatedData = data.Split(new string[] { "; " }, StringSplitOptions.None);
-
 
             return separatedData;
         }
 
-        
     }
 }
