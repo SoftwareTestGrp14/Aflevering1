@@ -12,7 +12,9 @@ namespace TestApp
     {
         static void Main(string[] args)
         {
-
+            IPlaneTracker planeTracker = new PlaneTracker();
+            ATM _atm = new ATM(planeTracker);
+            while(true) { }
         }
     }
 }
