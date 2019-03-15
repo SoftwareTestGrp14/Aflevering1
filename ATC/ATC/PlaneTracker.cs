@@ -9,11 +9,11 @@ namespace ATC
     public class PlaneTracker : IPlaneTracker
     {
         
-        private List<ITrack> tracks;
+        private List<ITrack> tracks = new List<ITrack>();
         private IAirSpaceTracker airSpaceTracker;
         private IAirSpace airSpace;
-        private List<string[]> tempDataList;
-        private List<SeparationCondition> currentSeparations;
+        private List<string[]> tempDataList = new List<string[]>();
+        private List<SeparationCondition> currentSeparations = new List<SeparationCondition>();
 
         public PlaneTracker()
         {
@@ -125,7 +125,7 @@ namespace ATC
         public string[] ConvertTransponderData(string data)
         {
 
-            string[] separatedData = data.Split(new string[] { "; " }, StringSplitOptions.None);
+            string[] separatedData = data.Split(new string[] { ";" }, StringSplitOptions.None);
 
             return separatedData;
         }
