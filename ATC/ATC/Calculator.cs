@@ -20,12 +20,32 @@ namespace ATC
         {
             int xDiff = xCord2 - xCord1;
             int yDiff = yCord2 - yCord1;
-            double distance = Math.Sqrt(Math.Pow(yDiff, 2) + Math.Pow(xDiff, 2));
-
-            return Math.Asin(yDiff / distance);
+            double angle = Math.Atan(xDiff / yDiff);
+            if (yDiff > 0) //Første og anden kvadrant (Fløjet nord på)
+            {
+                if (xDiff > 0) //Første kvadrant
+                {
+                    return (270 + angle);
+                }
+                else // Anden kvadrant
+                {
+                    return (90 + angle);
+                }
+            }
+            else //Tredje og fjerde kvadrant (Fløjet sydpå)
+            {
+                if (xDiff < 0) //Tredje kvadrant
+                {
+                    return (90 + angle);
+                }
+                else //Fjerde kvadrant
+                {
+                    return (270 + angle);
+                }
+            }
         }
 
-        public static bool IsSeparation(Track track1, Track track2)
+        public static bool IsSeparation(ITrack track1, ITrack track2)
         {
             if (track1._alt <= (track2._alt + 300) && track1._alt >= (track2._alt - 300))
             {
