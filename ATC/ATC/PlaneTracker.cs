@@ -127,6 +127,19 @@ namespace ATC
 
             string[] separatedData = data.Split(new string[] { ";" }, StringSplitOptions.None);
 
+            string[] tmpTime = separatedData;
+
+            string year = separatedData[4].Substring(0, 4);
+            string month = separatedData[4].Substring(4, 2);
+            string day = separatedData[4].Substring(6, 2);
+            string hour = separatedData[4].Substring(8, 2);
+            string minute = separatedData[4].Substring(10, 2);
+            string second = separatedData[4].Substring(12, 2);
+
+            string dateTime = $"{year}-{month}-{day} {hour}:{minute}:{second}";
+
+            separatedData[4] = dateTime;
+
             return separatedData;
         }
 
