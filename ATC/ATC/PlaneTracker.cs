@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Net.Sockets;
 using System.Text;
 
@@ -128,6 +129,8 @@ namespace ATC
 
         public string[] ConvertTransponderData(string data)
         {
+            Debug.WriteLine("Data her:");
+            Debug.WriteLine(data);
 
             string[] separatedData = data.Split(new string[] { ";" }, StringSplitOptions.None);
 
@@ -145,6 +148,7 @@ namespace ATC
             separatedData[4] = dateTime;
 
             return separatedData;
+
         }
 
     }
