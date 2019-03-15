@@ -14,6 +14,7 @@ namespace ATC
         private IAirSpace airSpace;
         private List<string[]> tempDataList = new List<string[]>();
         private List<SeparationCondition> currentSeparations = new List<SeparationCondition>();
+        ConsoleLog cLog = new ConsoleLog();
 
         public PlaneTracker()
         {
@@ -118,7 +119,10 @@ namespace ATC
                 }
 
 
-
+            foreach (var track in tracks)
+            {
+                cLog.Write(track._tag);
+            }
 
         }
 
