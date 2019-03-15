@@ -16,7 +16,7 @@ namespace ATC
             XStartPoint = 0;
 
             YSideLength = 80000;
-            YSideLength = 0;
+            YStartPoint = 0;
         }
 
         public double MinAltitude { get; set; }

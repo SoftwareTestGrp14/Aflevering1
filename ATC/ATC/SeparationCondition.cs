@@ -6,9 +6,9 @@ namespace ATC
 {
     public class SeparationCondition
     {
-        private ITrack _track1;
-        private ITrack _track2;
-        private DateTime Timestamp;
+        public ITrack _track1;
+        public ITrack _track2;
+        public DateTime Timestamp;
         public SeparationCondition(ITrack track1, ITrack track2)
         {
             _track1 = track1;
