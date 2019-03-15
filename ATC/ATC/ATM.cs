@@ -21,8 +21,13 @@ namespace ATC
 
         private void Receiver_TransponderDataReady(object sender, global::TransponderReceiver.RawTransponderDataEventArgs e)
         {
-            planeTracker.Update(e.TransponderData.ToString());
+            var lst = e.TransponderData;
 
+            foreach (var item in lst)
+            {
+                planeTracker.Update(item);
+            }
+            
         }
     }
 }
