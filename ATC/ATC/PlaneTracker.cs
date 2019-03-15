@@ -131,8 +131,8 @@ namespace ATC
 
             string[] separatedData = data.Split(new string[] { ";" }, StringSplitOptions.None);
 
-            string[] tmpTime = separatedData;
-
+           
+            //Rearranging the date and time to correct format
             string year = separatedData[4].Substring(0, 4);
             string month = separatedData[4].Substring(4, 2);
             string day = separatedData[4].Substring(6, 2);
