@@ -18,10 +18,10 @@ namespace UnitTests
             date2 = new DateTime(2019, 3, 19, 14, 0, 0);
         }
 
-        [TestCase(200, 200, 200, 1200, 10)]
+        [TestCase(200, 200, 200, 1200, 0.27)]
         public void velocity_CorrectCalculation(int x1, int x2, int y1, int y2, double expectedResult)
         {
-            Assert.That(Calculator.CalcVelocity(x1,x2,y1,y2,date1,date2)), Is.EqualTo(expectedResult));
+            Assert.That(Calculator.CalcVelocity(x1,x2,y1,y2,date1,date2), Is.EqualTo(expectedResult).Within(0.01));
         }
 
     }
