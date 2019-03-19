@@ -2,11 +2,11 @@
 using NUnit.Framework;
 using NSubstitute;
 
-namespace UnitTests3 { 
+namespace UnitTests
+{
     public class TestSeparationCondition
     {
         private SeparationCondition _uut;
-        private SeparationCondition equalsSeparation;
         private ITrack _fakeTrack1;
         private ITrack _fakeTrack2;
 
@@ -17,16 +17,15 @@ namespace UnitTests3 {
             _fakeTrack2 = Substitute.For<ITrack>("BTU423", 30000, 15000, 100000, 20151006213456789);
 
 
-            equalsSeparation = new SeparationCondition(_fakeTrack1, _fakeTrack2);
             _uut = new SeparationCondition(_fakeTrack1, _fakeTrack2);
         }
 
         [Test]
         public void TestEqualsMethod()
         {
-           
+            
 
-            Assert.Equals(_uut.Equals(equalsSeparation), false);
+            //Assert.That();
         }
     }
 }

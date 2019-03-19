@@ -22,7 +22,8 @@ namespace UnitTests
         public void WriteLog_WriteString_StringAppendToLog()
         {
             _uut.Write("Test string");
-            //Assert.That()
+
+            Assert.That()
         }
 
 
