@@ -17,8 +17,8 @@ namespace ATC
             _timestamp = ts;
         }
 
-        public string _tag { get; }
-        public int _xCord { get; }
+        public string _tag { get;  }
+        public int _xCord { get;  }
         public int _yCord { get; }
         public int _alt { get; }
         public double _velocity { get; }
