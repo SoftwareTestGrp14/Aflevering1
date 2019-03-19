@@ -114,7 +114,6 @@ namespace ATC
                             {
                                 //This separation was previously registered and will overwrite existing
 
-
                                 int index = currentSeparations.FindIndex(x => x == newSeparationCondition);
                                 currentSeparations.RemoveAt(index);
                                 currentSeparations.Add(newSeparationCondition);
