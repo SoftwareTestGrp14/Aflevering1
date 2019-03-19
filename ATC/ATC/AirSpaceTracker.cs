@@ -13,12 +13,12 @@ namespace ATC
                 return false;
             }
 
-            if (track._xCord <= airSpace.XStartPoint || track._xCord >= airSpace.GetXEndPoint())
+            if (track._xCord < airSpace.XStartPoint || track._xCord > airSpace.GetXEndPoint())
             {
                 return false;
             }
 
-            if (track._yCord <= airSpace.YStartPoint || track._yCord >= airSpace.GetYEndPoint())
+            if (track._yCord < airSpace.YStartPoint || track._yCord > airSpace.GetYEndPoint())
             {
                 return false;
             }
